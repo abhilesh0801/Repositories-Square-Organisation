@@ -20,7 +20,7 @@ class RepoListViewModel @Inject constructor(private val repoRepository: RepoRepo
     }
 
     private fun loadRepositories() {
-        loaderVisibility.value = View.VISIBLE
+        loaderVisibility.postValue(View.VISIBLE)
         repoRepository.getRepositories()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -30,11 +30,11 @@ class RepoListViewModel @Inject constructor(private val repoRepository: RepoRepo
 
                 override fun onNext(repositories: List<Repo>) {
                     repoListAdapter.updateRepoList(repositories)
-                    loaderVisibility.value = View.GONE
+                    loaderVisibility.postValue(View.GONE)
                 }
 
                 override fun onError(e: Throwable) {
-                    loaderVisibility.value = View.GONE
+                    loaderVisibility.postValue(View.GONE)
                 }
             })
     }

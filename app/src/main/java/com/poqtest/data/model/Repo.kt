@@ -7,9 +7,6 @@ class Repo {
     @SerializedName("id")
     @Expose
     val id: Int? = null
-    @SerializedName("node_id")
-    @Expose
-    val nodeId: String? = null
     @SerializedName("name")
     @Expose
     val name: String? = null
@@ -22,13 +19,4 @@ class Repo {
     @SerializedName("description")
     @Expose
     val description: String? = null
-    @SerializedName("git_url")
-    @Expose
-    val gitUrl: String? = null
-    @SerializedName("homepage")
-    @Expose
-    val homepage: String? = null
-    @SerializedName("size")
-    @Expose
-    val size: Int? = null
 }

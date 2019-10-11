@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.poqtest.R
 import com.poqtest.data.model.Repo
+import com.poqtest.utils.Constants
 
 class RepoListAdapter() : RecyclerView.Adapter<RepoListAdapter.RepoViewHolder>() {
 
@@ -22,7 +23,7 @@ class RepoListAdapter() : RecyclerView.Adapter<RepoListAdapter.RepoViewHolder>()
         val repo = repoList.get(position)
 
         holder.tvName.text = repo.name
-        holder.tvDescription.text = repo.description
+        holder.tvDescription.text = repo.description ?: Constants.DESCRIPTION_UNAVAILABLE
     }
 
     override fun getItemCount(): Int {

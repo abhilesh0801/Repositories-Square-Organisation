@@ -19,4 +19,14 @@
         <item name="android:textSize">@dimen/text_14</item>
     </style>
 
+    <style name="CardViewStyle" parent="CardView.Light">
+        <item name="android:layout_marginBottom">@dimen/dimen_4</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_10</item>
+        <item name="android:layout_marginStart">@dimen/dimen_10</item>
+        <item name="android:layout_marginTop">@dimen/dimen_6</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="cardCornerRadius">@dimen/dimen_4</item>
+        <item name="cardElevation">@dimen/dimen_1</item>
+    </style>
+
 </resources>
