@@ -23,6 +23,7 @@ class RepoListAdapter() : RecyclerView.Adapter<RepoListAdapter.RepoViewHolder>()
         val repo = repoList.get(position)
 
         holder.tvName.text = repo.name
+        holder.tvFullName.text = repo.fullName
         holder.tvDescription.text = repo.description ?: Constants.DESCRIPTION_UNAVAILABLE
     }
 
@@ -36,7 +37,8 @@ class RepoListAdapter() : RecyclerView.Adapter<RepoListAdapter.RepoViewHolder>()
     }
 
     class RepoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvName = itemView.findViewById<TextView>(R.id.tvName)
-        val tvDescription = itemView.findViewById<TextView>(R.id.tvDesc)
+        val tvName = itemView.findViewById(R.id.tvName) as TextView
+        val tvFullName = itemView.findViewById(R.id.tvFullName) as TextView
+        val tvDescription = itemView.findViewById(R.id.tvDesc) as TextView
     }
 }

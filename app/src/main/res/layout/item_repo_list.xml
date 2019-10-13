@@ -11,20 +11,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dimen_10"
+            android:padding="@dimen/dimen_12"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/HeaderText"/>
+                style="@style/HeaderStyle"/>
+
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/SubHeaderStyle"
+                android:layout_marginTop="@dimen/dimen_2"/>
 
             <TextView
                 android:id="@+id/tvDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Text"
+                style="@style/DescriptionStyle"
                 android:layout_marginTop="@dimen/dimen_4"/>
 
         </LinearLayout>

@@ -1,8 +1,6 @@
 package com.poqtest.di.module
 
 import com.poqtest.data.api.ApiService
-import com.poqtest.data.repository.RepoRepository
-import com.poqtest.di.ViewModelFactory
 import com.poqtest.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides

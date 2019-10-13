@@ -9,14 +9,28 @@
     </style>
 
 
-    <style name="HeaderText" parent="Widget.AppCompat.TextView">
+    <style name="HeaderStyle" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@android:color/primary_text_light</item>
-        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:textSize">@dimen/text_16</item>
     </style>
 
-    <style name="Text" parent="Widget.AppCompat.TextView">
+    <style name="SubHeaderStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/primary_text_light</item>
+        <item name="android:textSize">@dimen/text_14</item>
+    </style>
+
+    <style name="DescriptionStyle" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@android:color/darker_gray</item>
         <item name="android:textSize">@dimen/text_14</item>
+    </style>
+
+    <style name="MessageStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+
+    <style name="ButtonStyle" parent="DescriptionStyle" >
+        <item name="android:background">@drawable/button_background</item>
     </style>
 
     <style name="CardViewStyle" parent="CardView.Light">

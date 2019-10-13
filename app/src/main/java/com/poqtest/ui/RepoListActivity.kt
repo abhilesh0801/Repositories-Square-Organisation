@@ -1,6 +1,7 @@
 package com.poqtest.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
@@ -17,7 +18,7 @@ class RepoListActivity : AppCompatActivity() {
     lateinit var viewModelFactory: ViewModelFactory
 
     private lateinit var binding: ActivityRepoListBinding
-    private lateinit var mViewModel: RepoListViewModel
+    private lateinit var viewModel: RepoListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -25,8 +26,12 @@ class RepoListActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_repo_list)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
-        mViewModel = ViewModelProviders.of(this, viewModelFactory).get(RepoListViewModel::class.java)
+        binding.btnRetry.setOnClickListener(View.OnClickListener {
+            viewModel.loadRepositories()
+        })
 
-        binding.viewModel = mViewModel
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(RepoListViewModel::class.java)
+
+        binding.viewModel = viewModel
     }
 }

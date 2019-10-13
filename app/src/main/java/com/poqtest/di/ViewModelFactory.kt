@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.poqtest.data.repository.RepoRepository
 import com.poqtest.ui.RepoListViewModel
-import java.lang.IllegalArgumentException
 import javax.inject.Inject
 
 @Suppress("UNCHECKED_CAST")
