@@ -4,9 +4,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import androidx.test.uiautomator.UiDevice
-import androidx.test.uiautomator.UiObject
 import androidx.test.uiautomator.UiSelector
-import com.poqtest.BuildConfig
 import com.poqtest.ui.RepoListActivity
 import org.junit.Assert
 import org.junit.Before

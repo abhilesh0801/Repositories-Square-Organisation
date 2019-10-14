@@ -1,8 +1,10 @@
 package com.poqtest.ui
 
 import android.view.View
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.poqtest.data.api.Resource
 import com.poqtest.data.model.Repo
 import com.poqtest.data.repository.RepoRepository
 import com.poqtest.utils.Constants
@@ -21,6 +23,8 @@ class RepoListViewModel @Inject constructor(private val repoRepository: RepoRepo
     init {
         loadRepositories()
     }
+
+    /*val repositories: LiveData<Resource<List<Repo>>> = repoRepository.getRepositories()*/
 
     public fun loadRepositories() {
         loaderVisibility.postValue(View.VISIBLE)
