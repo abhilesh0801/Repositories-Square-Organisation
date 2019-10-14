@@ -1,7 +1,6 @@
 package com.poqtest.ui
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
@@ -25,10 +24,6 @@ class RepoListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_repo_list)
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-
-        binding.btnRetry.setOnClickListener(View.OnClickListener {
-            viewModel.loadRepositories()
-        })
 
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(RepoListViewModel::class.java)
 

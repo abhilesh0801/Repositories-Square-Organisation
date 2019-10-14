@@ -6,7 +6,6 @@ import io.reactivex.Observable
 import javax.inject.Inject
 import javax.inject.Singleton
 
-//To be constructed only once
 @Singleton
 class RepoRepository @Inject constructor(
     private val apiService: ApiService

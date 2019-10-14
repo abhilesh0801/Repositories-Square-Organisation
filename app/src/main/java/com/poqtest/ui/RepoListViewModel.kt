@@ -1,10 +1,9 @@
 package com.poqtest.ui
 
+import android.util.Log
 import android.view.View
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.poqtest.data.api.Resource
 import com.poqtest.data.model.Repo
 import com.poqtest.data.repository.RepoRepository
 import com.poqtest.utils.Constants
@@ -15,18 +14,29 @@ import javax.inject.Inject
 
 class RepoListViewModel @Inject constructor(private val repoRepository: RepoRepository): ViewModel() {
 
+    val TAG = "RepoListViewModel"
+
+    // Controls hiding and showing of progress bar
     var loaderVisibility: MutableLiveData<Int> = MutableLiveData()
+
+    // Controls hiding and showing of error message
     var errorVisibility: MutableLiveData<Int> = MutableLiveData()
+
+    // Controls hiding and showing of recyclerView
+    var recyclerViewVisibility: MutableLiveData<Int> = MutableLiveData()
+
+    // Controls what error message is shown
     var errorText: MutableLiveData<String> = MutableLiveData()
+
     val repoListAdapter: RepoListAdapter = RepoListAdapter()
 
     init {
         loadRepositories()
     }
 
-    /*val repositories: LiveData<Resource<List<Repo>>> = repoRepository.getRepositories()*/
+    fun loadRepositories() {
+        Log.d(TAG,"loadRepositories")
 
-    public fun loadRepositories() {
         loaderVisibility.postValue(View.VISIBLE)
         errorVisibility.postValue(View.GONE)
 
@@ -38,29 +48,32 @@ class RepoListViewModel @Inject constructor(private val repoRepository: RepoRepo
                 }
 
                 override fun onNext(repositories: List<Repo>) {
-                    setRepositoryData(repositories)
+                    if(repositories.isEmpty()) {
+                        setErrorMessage(Constants.NO_REPOSITORIES_FOUND)
+                    } else {
+                        setRepositoryData(repositories)
+                    }
                 }
 
                 override fun onError(e: Throwable) {
-                    setErrorMessage()
+                    setErrorMessage(Constants.FAILED_TO_LOAD_REPOSITORIES)
                 }
             })
     }
 
     private fun setRepositoryData(repositories: List<Repo>) {
-        if(repositories.isEmpty()) {
-            errorVisibility.postValue(View.VISIBLE)
-            errorText.postValue(Constants.NO_REPOSITORIES_FOUND)
-        } else {
-            errorVisibility.postValue(View.GONE)
-        }
+        Log.d(TAG,"setRepositoryData")
         repoListAdapter.updateRepoList(repositories)
+        recyclerViewVisibility.postValue(View.VISIBLE)
+        errorVisibility.postValue(View.GONE)
         loaderVisibility.postValue(View.GONE)
     }
 
-    private fun setErrorMessage() {
+    fun setErrorMessage(message: String) {
+        Log.d(TAG,"setErrorMessage: $message")
         errorVisibility.postValue(View.VISIBLE)
-        errorText.postValue(Constants.FAILED_TO_LOAD_REPOSITORIES)
+        errorText.postValue(message)
+        recyclerViewVisibility.postValue(View.GONE)
         loaderVisibility.postValue(View.GONE)
     }
 }

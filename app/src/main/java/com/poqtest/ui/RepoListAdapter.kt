@@ -9,7 +9,7 @@ import com.poqtest.R
 import com.poqtest.data.model.Repo
 import com.poqtest.utils.Constants
 
-class RepoListAdapter() : RecyclerView.Adapter<RepoListAdapter.RepoViewHolder>() {
+class RepoListAdapter : RecyclerView.Adapter<RepoListAdapter.RepoViewHolder>() {
 
     private lateinit var repoList: List<Repo>
 
@@ -20,7 +20,7 @@ class RepoListAdapter() : RecyclerView.Adapter<RepoListAdapter.RepoViewHolder>()
     }
 
     override fun onBindViewHolder(holder: RepoViewHolder, position: Int) {
-        val repo = repoList.get(position)
+        val repo = repoList[position]
 
         holder.tvName.text = repo.name
         holder.tvFullName.text = repo.fullName
