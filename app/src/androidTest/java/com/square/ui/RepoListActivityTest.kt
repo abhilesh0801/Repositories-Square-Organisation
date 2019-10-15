@@ -31,23 +31,11 @@ class RepoListActivityTest {
     }
 
     /*
-    * Test if recyclerView is visible on device screen
+    * Test if recyclerView exits on device screen
     */
     @Test
-    fun successUIElementsExist() {
+    fun uiElementsExist() {
         val recyclerView = device.findObject(UiSelector().resourceId("$packageName:id/recyclerView"))
         Assert.assertTrue(recyclerView.exists())
-    }
-
-    /*
-    * Test if error message textView and retry button are visible on device screen
-     */
-    @Test
-    fun failureUIElementsExist() {
-        val tvMessage = device.findObject(UiSelector().resourceId("$packageName:id/tvMessage"))
-        val btnRetry = device.findObject(UiSelector().resourceId("$packageName:id/btnRetry"))
-
-        Assert.assertTrue(tvMessage.exists())
-        Assert.assertTrue(btnRetry.exists())
     }
 }
