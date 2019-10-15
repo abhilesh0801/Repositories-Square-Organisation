@@ -1,9 +1,9 @@
-package com.poqtest.di
+package com.square.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.poqtest.data.repository.RepoRepository
-import com.poqtest.ui.RepoListViewModel
+import com.square.data.repository.RepoRepository
+import com.square.ui.RepoListViewModel
 import javax.inject.Inject
 
 @Suppress("UNCHECKED_CAST")

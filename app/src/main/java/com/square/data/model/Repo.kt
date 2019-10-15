@@ -1,4 +1,4 @@
-package com.poqtest.data.model
+package com.square.data.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

@@ -1,7 +1,7 @@
-package com.poqtest.di.module
+package com.square.di.module
 
-import com.poqtest.data.api.ApiService
-import com.poqtest.utils.Constants.Companion.BASE_URL
+import com.square.data.api.ApiService
+import com.square.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

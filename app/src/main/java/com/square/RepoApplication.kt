@@ -1,8 +1,8 @@
-package com.poqtest
+package com.square
 
 import android.app.Activity
 import android.app.Application
-import com.poqtest.di.component.DaggerAppComponent
+import com.square.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector

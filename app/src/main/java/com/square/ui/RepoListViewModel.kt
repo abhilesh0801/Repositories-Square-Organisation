@@ -1,12 +1,12 @@
-package com.poqtest.ui
+package com.square.ui
 
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.poqtest.data.model.Repo
-import com.poqtest.data.repository.RepoRepository
-import com.poqtest.utils.Constants
+import com.square.data.model.Repo
+import com.square.data.repository.RepoRepository
+import com.square.utils.Constants
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
@@ -14,12 +14,14 @@ import javax.inject.Inject
 
 class RepoListViewModel @Inject constructor(private val repoRepository: RepoRepository): ViewModel() {
 
-    val TAG = "RepoListViewModel"
+    companion object {
+        const val TAG = "RepoListViewModel"
+    }
 
     // Controls hiding and showing of progress bar
     var loaderVisibility: MutableLiveData<Int> = MutableLiveData()
 
-    // Controls hiding and showing of error message
+    // Controls hiding and showing of error layout
     var errorVisibility: MutableLiveData<Int> = MutableLiveData()
 
     // Controls hiding and showing of recyclerView
@@ -62,7 +64,7 @@ class RepoListViewModel @Inject constructor(private val repoRepository: RepoRepo
     }
 
     private fun setRepositoryData(repositories: List<Repo>) {
-        Log.d(TAG,"setRepositoryData")
+        Log.d(TAG,"setRepositoryData: ${repositories.size}")
         repoListAdapter.updateRepoList(repositories)
         recyclerViewVisibility.postValue(View.VISIBLE)
         errorVisibility.postValue(View.GONE)

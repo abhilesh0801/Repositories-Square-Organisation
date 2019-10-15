@@ -1,7 +1,7 @@
-package com.poqtest.data.repository
+package com.square.data.repository
 
-import com.poqtest.data.api.ApiService
-import com.poqtest.data.model.Repo
+import com.square.data.api.ApiService
+import com.square.data.model.Repo
 import io.reactivex.Observable
 import javax.inject.Inject
 import javax.inject.Singleton

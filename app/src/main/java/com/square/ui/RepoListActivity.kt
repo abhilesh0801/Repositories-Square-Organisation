@@ -1,13 +1,13 @@
-package com.poqtest.ui
+package com.square.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.poqtest.R
-import com.poqtest.databinding.ActivityRepoListBinding
-import com.poqtest.di.ViewModelFactory
+import com.square.R
+import com.square.databinding.ActivityRepoListBinding
+import com.square.di.ViewModelFactory
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 

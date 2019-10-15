@@ -1,9 +1,9 @@
-package com.poqtest.di.component
+package com.square.di.component
 
 import android.app.Application
-import com.poqtest.RepoApplication
-import com.poqtest.di.module.ActivityModule
-import com.poqtest.di.module.AppModule
+import com.square.RepoApplication
+import com.square.di.module.ActivityModule
+import com.square.di.module.AppModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

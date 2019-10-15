@@ -1,4 +1,4 @@
-package com.poqtest.utils
+package com.square.utils
 
 class Constants {
     companion object {

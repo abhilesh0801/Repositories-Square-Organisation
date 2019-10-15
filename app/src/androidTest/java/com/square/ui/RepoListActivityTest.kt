@@ -1,12 +1,12 @@
-package com.poqtest.ui
+package com.square.ui
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
-import androidx.test.uiautomator.*
-import com.poqtest.BuildConfig
+import androidx.test.uiautomator.UiDevice
+import androidx.test.uiautomator.UiSelector
+import com.square.BuildConfig
 import org.junit.Assert
 import org.junit.Before
-
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

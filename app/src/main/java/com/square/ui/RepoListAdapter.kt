@@ -1,13 +1,13 @@
-package com.poqtest.ui
+package com.square.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.poqtest.R
-import com.poqtest.data.model.Repo
-import com.poqtest.utils.Constants
+import com.square.R
+import com.square.data.model.Repo
+import com.square.utils.Constants
 
 class RepoListAdapter : RecyclerView.Adapter<RepoListAdapter.RepoViewHolder>() {
 

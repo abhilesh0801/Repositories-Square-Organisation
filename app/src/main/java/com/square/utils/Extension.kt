@@ -1,4 +1,4 @@
-package com.poqtest.utils
+package com.square.utils
 
 import android.content.ContextWrapper
 import android.view.View

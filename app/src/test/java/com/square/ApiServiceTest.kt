@@ -1,9 +1,9 @@
-package com.poqtest
+package com.square
 
-import com.poqtest.data.api.ApiService
-import com.poqtest.utils.Constants.Companion.SQUARE_REPO_JSON
-import com.poqtest.utils.Constants.Companion.SUCCESS_RESPONSE_CODE
-import com.poqtest.utils.Constants.Companion.UTF_8
+import com.square.data.api.ApiService
+import com.square.utils.Constants.Companion.SQUARE_REPO_JSON
+import com.square.utils.Constants.Companion.SUCCESS_RESPONSE_CODE
+import com.square.utils.Constants.Companion.UTF_8
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer

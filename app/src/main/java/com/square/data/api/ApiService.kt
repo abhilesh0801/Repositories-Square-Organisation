@@ -1,6 +1,6 @@
-package com.poqtest.data.api
+package com.square.data.api
 
-import com.poqtest.data.model.Repo
+import com.square.data.model.Repo
 import io.reactivex.Observable
 import retrofit2.http.GET
 

@@ -1,6 +1,6 @@
-package com.poqtest.di.module
+package com.square.di.module
 
-import com.poqtest.ui.RepoListActivity
+import com.square.ui.RepoListActivity
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
